@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project ver="10" name="IMY" libEmbed="true" icon="\app.ico" ui="win" output="IMY.exe" CompanyName="aardio" FileDescription="小小输入法辅助工具" LegalCopyright="Copyright (C) aardio 2025" ProductName="小小输入法辅助工具" InternalName="IMY.exe" FileVersion="0.0.1.001" ProductVersion="0.0.1.001" publishDir="/dist/" dstrip="false">
+	<file name="main.aardio" path="main.aardio" comment="main.aardio"/>
+	<folder name="资源文件" path="res" embed="true"/>
+</project>
