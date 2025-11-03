@@ -1,191 +1,198 @@
 //RUNAS//
-import fonts.fontAwesomeSub;
+import fonts.fontAwesome;
 import win.ui;
 /*DSG{{*/
-var winform = win.form(text="IMY - 小小输入法辅助工具";right=676;bottom=125;max=false;min=false)
+var winform = win.form(text="IMY - 小小输入法辅助工具";right=621;bottom=380;bgcolor=0xF5F5F5;border="none";max=false)
 winform.add(
-btnAi={cls="plus";text="AI 问答";left=556;top=85;right=655;bottom=115;align="left";bgcolor=-5197169;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=20}};iconText='\uF007';notify=1;textPadding={left=39};z=7};
-btnHelp={cls="plus";text="帮助";left=462;top=85;right=550;bottom=115;align="left";bgcolor=-5197169;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=20}};iconText='\uF0F6';notify=1;textPadding={left=39};z=5};
-btnInstall={cls="plus";text="安装 / 更新";left=14;top=85;right=175;bottom=115;align="left";bgcolor=-5197169;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=20}};iconText='\uF019 ';notify=1;textPadding={left=39};z=3};
-btnMb={cls="plus";text="码表";left=368;top=85;right=456;bottom=115;align="left";bgcolor=-5197169;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=20}};iconText='\uF0F6';notify=1;textPadding={left=39};z=8};
-btnSetting={cls="plus";text="设置";left=275;top=85;right=363;bottom=115;align="left";bgcolor=-5197169;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=20}};iconText='\uF013';notify=1;textPadding={left=39};z=6};
-btnUninstall={cls="plus";text="卸载";left=181;top=85;right=269;bottom=115;align="left";bgcolor=-5197169;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=20}};iconText='\uF1F8';notify=1;textPadding={left=39};z=4};
-lbInfo={cls="static";left=13;top=52;right=656;bottom=80;transparent=1;z=2};
-progress={cls="plus";left=13;top=9;right=656;bottom=41;bgcolor=6447459;forecolor=9959653;notify=1;z=1}
+btnAi={cls="plus";text="AI 问答";left=431;top=265;right=595;bottom=328;bgcolor=0xF39C12;border={radius=6};color=0xFFFFFF;font=LOGFONT(h=-14;weight=600);iconStyle={font=LOGFONT(h=-22;name='FontAwesome');padding={top=-20}};iconText='\uF086';notify=1;textPadding={top=30};z=13};
+btnHelp={cls="plus";text="帮助文档";left=231;top=265;right=395;bottom=328;bgcolor=0x16A085;border={radius=6};color=0xFFFFFF;font=LOGFONT(h=-14;weight=600);iconStyle={font=LOGFONT(h=-22;name='FontAwesome');padding={top=-20}};iconText='\uF059';notify=1;textPadding={top=30};z=12};
+btnInstall={cls="plus";text="安装 / 更新";left=31;top=180;right=195;bottom=243;bgcolor=0x3498DB;border={radius=6};color=0xFFFFFF;font=LOGFONT(h=-14;weight=600);iconStyle={font=LOGFONT(h=-22;name='FontAwesome');padding={top=-20}};iconText='\uF019';notify=1;textPadding={top=30};z=8};
+btnMb={cls="plus";text="码表管理";left=431;top=180;right=595;bottom=243;bgcolor=0x9B59B6;border={radius=6};color=0xFFFFFF;font=LOGFONT(h=-14;weight=600);iconStyle={font=LOGFONT(h=-22;name='FontAwesome');padding={top=-20}};iconText='\uF0DB';notify=1;textPadding={top=30};z=10};
+btnSetting={cls="plus";text="设置";left=31;top=265;right=195;bottom=328;bgcolor=0x95A5A6;border={radius=6};color=0xFFFFFF;font=LOGFONT(h=-14;weight=600);iconStyle={font=LOGFONT(h=-22;name='FontAwesome');padding={top=-20}};iconText='\uF013';notify=1;textPadding={top=30};z=11};
+btnUninstall={cls="plus";text="卸载";left=231;top=180;right=395;bottom=243;bgcolor=0xE74C3C;border={radius=6};color=0xFFFFFF;font=LOGFONT(h=-14;weight=600);iconStyle={font=LOGFONT(h=-22;name='FontAwesome');padding={top=-20}};iconText='\uF1F8';notify=1;textPadding={top=30};z=9};
+footerBar={cls="bkplus";left=0;top=350;right=622;bottom=380;bgcolor=0xECF0F1;db=1;dl=1;dr=1;z=14};
+infoPanel={cls="plus";left=20;top=70;right=603;bottom=162;bgcolor=0xFFFFFF;border={color=0xFFE0E0E0;radius=8;width=1};dl=1;dr=1;dt=1;z=4};
+lbInfo={cls="static";text="准备就绪";left=80;top=95;right=680;bottom=125;color=0x2C3E50;font=LOGFONT(h=-14);transparent=1;z=6};
+progress={cls="plus";left=40;top=130;right=587;bottom=145;bgcolor=0xECF0F1;border={radius=3};forecolor=0x3498DB;z=7};
+statusIcon={cls="plus";text='\uF05A';left=40;top=90;right=70;bottom=120;color=0x3498DB;font=LOGFONT(h=-24;name='FontAwesome');z=5};
+titleBar={cls="bkplus";left=0;top=0;right=623;bottom=50;bgcolor=0x2C3E50;dl=1;dr=1;dt=1;z=1};
+titleIcon={cls="bkplus";text='\uF11C';left=15;top=12;right=45;bottom=42;color=0xECF0F1;font=LOGFONT(h=-20;name='FontAwesome');z=2};
+titleText={cls="bkplus";text="小小输入法辅助工具";left=50;top=15;right=300;bottom=40;align="left";color=0xECF0F1;font=LOGFONT(h=-16;weight=600);z=3};
+versionInfo={cls="bkplus";text="版本 1.0.0";left=20;top=357;right=200;bottom=373;align="left";color=0x7F8C8D;z=15}
 )
 /*}}*/
 
-//设置进度区间，可自动切换到进度条显示模式
+// 设置进度条
 winform.progress.setProgressRange(1,100);
-
-//设置当前进度
-winform.progress.progressPos  = 1;
+winform.progress.progressPos = 0;
 
 import key.ime.yong;
 var yongIme = key.ime.yong(winform); 
- 
+
 var totalUpdateSize,totalReceiveSize = 0,0;
+
 yongIme.onReceiveBegin = function(updateSize,updateList){
-	totalUpdateSize = updateSize;
+    totalUpdateSize = updateSize;
+    winform.lbInfo.text = "开始下载更新...";
+    winform.statusIcon.iconText = '\uF021';
+    winform.statusIcon.color = 0xF39C12;
 }
 
 yongIme.onReceiveEnd = function(ok){
-	winform.lbInfo.text = ok ? "更新已完成":"你使用的已经是最新版本"; 
-	winform.progress.progressPos  = 100;
+    if(ok){
+        winform.lbInfo.text = "✓ 更新已完成，输入法已是最新版本";
+        winform.statusIcon.iconText = '\uF00C';
+        winform.statusIcon.color = 0x27AE60;
+    }
+    else {
+        winform.lbInfo.text = "✓ 你使用的已经是最新版本";
+        winform.statusIcon.iconText = '\uF00C';
+        winform.statusIcon.color = 0x27AE60;
+    }
+    winform.progress.progressPos = 100;
 }
 
 yongIme.onReceiveFileBegin = function(size,filename){
-	winform.lbInfo.text = "正在下载：" + filename; 
+    winform.lbInfo.text = "正在下载：" + filename;
+    winform.statusIcon.iconText = '\uF019';
+    winform.statusIcon.color = 0x3498DB;
 }
+
 yongIme.onReceiveFileEnd = function(size,filename){ 
-	winform.lbInfo.text = "下载完成：" + filename;
-	totalReceiveSize = totalReceiveSize + size; 
-	winform.progress.progressPos  = (totalReceiveSize / totalUpdateSize) * 100;
+    totalReceiveSize = totalReceiveSize + size;
+    var percent = totalUpdateSize > 0 ? (totalReceiveSize / totalUpdateSize) * 100 : 0;
+    winform.progress.progressPos = percent;
+    winform.lbInfo.text = string.format("下载进度：%d%% - %s",percent,filename);
 }
 
- 
-winform.btnAi.oncommand = function(id,event){
-	import key.ime.yong.chat;
-	key.ime.yong.chat().doModal();
+// 统一设置按钮样式的函数
+var setButtonSkin = function(btn,defaultColor,hoverColor){
+    btn.skin({
+        background={
+            default=defaultColor;
+            disabled=0xFFBDC3C7;
+            hover=hoverColor;
+            active=hoverColor
+        };
+        color={
+            default=0xFFFFFFFF;
+            disabled=0xFF95A5A6;
+            hover=0xFFFFFFFF
+        }
+    })
 }
 
+// 应用按钮样式
+setButtonSkin(winform.btnInstall,0xFF3498DB,0xFF2980B9);
+setButtonSkin(winform.btnUninstall,0xFFE74C3C,0xFFC0392B);
+setButtonSkin(winform.btnMb,0xFF9B59B6,0xFF8E44AD);
+setButtonSkin(winform.btnSetting,0xFF95A5A6,0xFF7F8C8D);
+setButtonSkin(winform.btnHelp,0xFF16A085,0xFF138D75);
+setButtonSkin(winform.btnAi,0xFFF39C12,0xFFE67E22);
+
+// 按钮点击事件
 winform.btnInstall.oncommand = function(id,event){
-	winform.btnInstall.disabledText = {'\uF254';'\uF251';'\uF252';'\uF253';'\uF250'}
-	yongIme.update();
-	yongIme.tsfReg(true);
-	
- 	for(i=1;10;1){
- 		thread.delay(1000);
- 		
- 		if(yongIme.isInstalled()){ 
-			break;
-		}	
- 	}
- 	
-	winform.btnUninstall.disabled = false;
-	winform.btnSetting.disabled = false;
-	winform.btnHelp.disabled = false;
-	
-	winform.btnInstall.disabledText = null;
-	winform.btnInstall.text = "更新 / 优化 ImTip 提示"
-}	
+    winform.btnInstall.disabledText = {'\uF110'}; // 使用旋转图标
+    winform.lbInfo.text = "正在安装/更新输入法...";
+    winform.statusIcon.iconText = '\uF021';
+    winform.statusIcon.color = 0xF39C12;
 
+    thread.invoke(
+        function(winform,yongIme){
+            yongIme.update();
+            yongIme.tsfReg(true);
 
-if(yongIme.isInstalled()){
-	winform.btnInstall.text = "更新 / 优化 ImTip 提示"
-}
-else {
-	winform.btnInstall.text = "安装 / 更新"	
-	winform.btnUninstall.disabled = true;
-	winform.btnSetting.disabled = true;
-	winform.btnHelp.disabled = true;
-}
+            for(i=1;10){
+                thread.delay(1000);
+                if(yongIme.isInstalled()){ 
+                    break;
+                }   
+            }
 
-winform.btnHelp.oncommand = function(id,event){
-	yongIme.help()
-}
-
-winform.btnSetting.oncommand = function(id,event){
- 
-	yongIme.config()
+            winform.btnInstall.disabledText = null;
+            winform.btnInstall.text = "更新 / 优化";
+            winform.btnUninstall.disabled = false;
+            winform.btnSetting.disabled = false;
+            winform.btnHelp.disabled = false;
+            winform.btnMb.disabled = false;
+        },winform,yongIme
+    )
 }
 
 winform.btnUninstall.oncommand = function(id,event){
-	winform.btnUninstall.disabledText = {'\uF254';'\uF251';'\uF252';'\uF253';'\uF250'}
-	yongIme.tsfReg(false);
-	
-	thread.delay(1000)
-	winform.btnUninstall.disabledText = null;
-	winform.btnUninstall.disabled = true;
-	winform.btnInstall.text = "安装 / 更新"	
-	winform.btnUninstall.disabled = true;
-	winform.btnSetting.disabled = true;
-	winform.btnHelp.disabled = true;
+    if(!winform.msgboxTest("确定要卸载小小输入法吗？","确认卸载")){
+        return;
+    }
+
+    winform.btnUninstall.disabledText = {'\uF110'};
+    winform.lbInfo.text = "正在卸载输入法...";
+    winform.statusIcon.iconText = '\uF021';
+    winform.statusIcon.color = 0xE74C3C;
+
+    thread.invoke(
+        function(winform,yongIme){
+            yongIme.tsfReg(false);
+            thread.delay(1000);
+
+            winform.btnUninstall.disabledText = null;
+            winform.btnInstall.text = "安装 / 更新";
+            winform.btnUninstall.disabled = true;
+            winform.btnSetting.disabled = true;
+            winform.btnHelp.disabled = true;
+            winform.btnMb.disabled = true;
+            winform.lbInfo.text = "输入法已卸载";
+            winform.statusIcon.iconText = '\uF00C';
+            winform.statusIcon.color = 0x27AE60;
+        },winform,yongIme
+    )
+}
+
+winform.btnSetting.oncommand = function(id,event){
+    yongIme.config();
+}
+
+winform.btnHelp.oncommand = function(id,event){
+    yongIme.help();
+}
+
+winform.btnAi.oncommand = function(id,event){
+    import key.ime.yong.chat;
+    key.ime.yong.chat().doModal();
 }
 
 winform.btnMb.oncommand = function(id,event){
-	import process.code;
-	var path = yongIme.getPath();
-	path = io.joinpath(path,"mb");
-	if(io.exist(path)){
-		process.code(path)
-	}
-	else {
-		winform.msgboxErr("请先下载输入法")
-	}
+    import process.code;
+    var path = yongIme.getPath();
+    path = io.joinpath(path,"mb");
+    if(io.exist(path)){
+        process.code(path);
+    }
+    else {
+        winform.msgboxErr("请先安装输入法","提示");
+    }
 }
 
-winform.btnInstall.skin({
-	background={
-		default=0x668FB2B0;
-		disabled=0xFFCCCCCC;
-		hover=0xFF928BB3		
-	};
-	color={
-		default=0xFF000000;
-		disabled=0xFF6D6D6D		
-	}
-})
+// 初始化界面状态
+if(yongIme.isInstalled()){
+    winform.btnInstall.text = "更新 / 优化";
+    winform.lbInfo.text = "输入法已安装，可以进行更新或配置";
+    winform.statusIcon.iconText = '\uF00C';
+    winform.statusIcon.color = 0x27AE60;
+}
+else {
+    winform.btnInstall.text = "安装 / 更新";
+    winform.btnUninstall.disabled = true;
+    winform.btnSetting.disabled = true;
+    winform.btnHelp.disabled = true;
+    winform.btnMb.disabled = true;
+    winform.lbInfo.text = "输入法未安装，请点击「安装 / 更新」按钮";
+    winform.statusIcon.iconText = '\uF071';
+    winform.statusIcon.color = 0xE67E22;
+}
 
-winform.btnUninstall.skin({
-	background={
-		default=0x668FB2B0;
-		disabled=0xFFCCCCCC;
-		hover=0xFF928BB3		
-	};
-	color={
-		default=0xFF000000;
-		disabled=0xFF6D6D6D		
-	}
-})
-
-winform.btnSetting.skin({
-	background={
-		default=0x668FB2B0;
-		disabled=0xFFCCCCCC;
-		hover=0xFF928BB3		
-	};
-	color={
-		default=0xFF000000;
-		disabled=0xFF6D6D6D		
-	}
-})
-
-winform.btnHelp.skin({
-	background={
-		default=0x668FB2B0;
-		disabled=0xFFCCCCCC;
-		hover=0xFF928BB3		
-	};
-	color={
-		default=0xFF000000;
-		disabled=0xFF6D6D6D		
-	}
-})
-
-winform.btnAi.skin({
-	background={
-		default=0x668FB2B0;
-		disabled=0xFFCCCCCC;
-		hover=0xFF928BB3		
-	};
-	color={
-		default=0xFF000000;
-		disabled=0xFF6D6D6D		
-	}
-})
-
-winform.btnMb.skin({
-	background={
-		default=0x668FB2B0;
-		disabled=0xFFCCCCCC;
-		hover=0xFF928BB3		
-	};
-	color={
-		default=0xFF000000;
-		disabled=0xFF6D6D6D		
-	}
-})
+// 添加无边框窗口支持
+import win.ui.simpleWindow2;
+win.ui.simpleWindow2(winform);
 
 winform.show();
 win.loopMessage();
