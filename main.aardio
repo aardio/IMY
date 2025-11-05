@@ -92,7 +92,7 @@ setButtonSkin(winform.btnAi,0xFFF39C12,0xFFE67E22);
 
 // 按钮点击事件
 winform.btnInstall.oncommand = function(id,event){
-    winform.btnInstall.disabledText = {'\uF110'}; // 使用旋转图标
+    winform.btnInstall.disabledText = ['\uF254','\uF251','\uF252','\uF253','\uF250'] 
     winform.lbInfo.text = "正在安装/更新输入法...";
     winform.statusIcon.iconText = '\uF021';
     winform.statusIcon.color = 0xF39C12;
@@ -124,7 +124,7 @@ winform.btnUninstall.oncommand = function(id,event){
         return;
     }
 
-    winform.btnUninstall.disabledText = {'\uF110'};
+    winform.btnUninstall.disabledText = ['\uF254','\uF251','\uF252','\uF253','\uF250'];
     winform.lbInfo.text = "正在卸载输入法...";
     winform.statusIcon.iconText = '\uF021';
     winform.statusIcon.color = 0xE74C3C;
