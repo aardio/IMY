@@ -11,18 +11,17 @@ btnMb={cls="plus";text="码表管理";left=431;top=180;right=595;bottom=243;bgco
 btnSetting={cls="plus";text="设置";left=31;top=265;right=195;bottom=328;bgcolor=0x95A5A6;border={radius=6};color=0xFFFFFF;font=LOGFONT(h=-14;weight=600);iconStyle={font=LOGFONT(h=-22;name='FontAwesome');padding={top=-20}};iconText='\uF013';notify=1;textPadding={top=30};z=11};
 btnUninstall={cls="plus";text="卸载";left=231;top=180;right=395;bottom=243;bgcolor=0xE74C3C;border={radius=6};color=0xFFFFFF;font=LOGFONT(h=-14;weight=600);iconStyle={font=LOGFONT(h=-22;name='FontAwesome');padding={top=-20}};iconText='\uF1F8';notify=1;textPadding={top=30};z=9};
 footerBar={cls="bkplus";left=0;top=350;right=622;bottom=380;bgcolor=0xECF0F1;db=1;dl=1;dr=1;z=14};
-infoPanel={cls="plus";left=20;top=70;right=603;bottom=162;bgcolor=0xFFFFFF;border={color=0xFFE0E0E0;radius=8;width=1};dl=1;dr=1;dt=1;z=4};
-lbInfo={cls="static";text="准备就绪";left=80;top=95;right=680;bottom=125;color=0x2C3E50;font=LOGFONT(h=-14);transparent=1;z=6};
+infoPanel={cls="plus";left=20;top=70;right=603;bottom=162;bgcolor=0xFFFFFF;border={color=0xFFE0E0E0;radius=8;width=1};dl=1;dr=1;dt=1;z=1};
+lbInfo={cls="static";text="准备就绪";left=80;top=95;right=584;bottom=125;color=0x2C3E50;font=LOGFONT(h=-14);transparent=1;z=6};
 progress={cls="plus";left=40;top=130;right=587;bottom=145;bgcolor=0xECF0F1;border={radius=3};forecolor=0x3498DB;z=7};
 statusIcon={cls="plus";text='\uF05A';left=40;top=90;right=70;bottom=120;color=0x3498DB;font=LOGFONT(h=-24;name='FontAwesome');z=5};
-titleBar={cls="bkplus";left=0;top=0;right=623;bottom=50;bgcolor=0x2C3E50;dl=1;dr=1;dt=1;z=1};
-titleIcon={cls="bkplus";text='\uF11C';left=15;top=12;right=45;bottom=42;color=0xECF0F1;font=LOGFONT(h=-20;name='FontAwesome');z=2};
-titleText={cls="bkplus";text="小小输入法辅助工具";left=50;top=15;right=300;bottom=40;align="left";color=0xECF0F1;font=LOGFONT(h=-16;weight=600);z=3};
+titleBar={cls="bkplus";left=0;top=0;right=623;bottom=50;bgcolor=0x2C3E50;dl=1;dr=1;dt=1;z=2};
+titleIcon={cls="bkplus";text='\uF11C';left=15;top=12;right=45;bottom=42;color=0xECF0F1;font=LOGFONT(h=-20;name='FontAwesome');z=3};
+titleText={cls="bkplus";text="小小输入法辅助工具";left=50;top=15;right=300;bottom=40;align="left";color=0xECF0F1;font=LOGFONT(h=-16;weight=600);z=4};
 versionInfo={cls="bkplus";text="版本 1.0.0";left=20;top=357;right=200;bottom=373;align="left";color=0x7F8C8D;z=15}
 )
 /*}}*/
 
-// 设置进度条
 winform.progress.setProgressRange(1,100);
 winform.progress.progressPos = 0;
 
@@ -92,7 +91,7 @@ setButtonSkin(winform.btnAi,0xFFF39C12,0xFFE67E22);
 
 // 按钮点击事件
 winform.btnInstall.oncommand = function(id,event){
-    winform.btnInstall.disabledText = {'\uF110'}; // 使用旋转图标
+    winform.btnInstall.disabledText = ['\uF254','\uF251','\uF252','\uF253','\uF250'] 
     winform.lbInfo.text = "正在安装/更新输入法...";
     winform.statusIcon.iconText = '\uF021';
     winform.statusIcon.color = 0xF39C12;
@@ -124,7 +123,7 @@ winform.btnUninstall.oncommand = function(id,event){
         return;
     }
 
-    winform.btnUninstall.disabledText = {'\uF110'};
+    winform.btnUninstall.disabledText = ['\uF254','\uF251','\uF252','\uF253','\uF250'];
     winform.lbInfo.text = "正在卸载输入法...";
     winform.statusIcon.iconText = '\uF021';
     winform.statusIcon.color = 0xE74C3C;
@@ -190,7 +189,6 @@ else {
     winform.statusIcon.color = 0xE67E22;
 }
 
-// 添加无边框窗口支持
 import win.ui.simpleWindow2;
 win.ui.simpleWindow2(winform);
 
