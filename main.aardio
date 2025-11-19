@@ -13,7 +13,7 @@ btnUninstall={cls="plus";text="卸载";left=231;top=180;right=395;bottom=243;bgc
 footerBar={cls="bkplus";left=0;top=350;right=622;bottom=380;bgcolor=0xECF0F1;db=1;dl=1;dr=1;z=14};
 infoPanel={cls="plus";left=20;top=70;right=603;bottom=162;bgcolor=0xFFFFFF;border={color=0xFFE0E0E0;radius=8;width=1};dl=1;dr=1;dt=1;z=1};
 lbInfo={cls="static";text="准备就绪";left=80;top=95;right=584;bottom=125;color=0x2C3E50;font=LOGFONT(h=-14);transparent=1;z=6};
-progress={cls="plus";left=40;top=130;right=587;bottom=145;bgcolor=0xECF0F1;border={radius=3};forecolor=0x3498DB;z=7};
+progress={cls="plus";left=40;top=130;right=584;bottom=145;bgcolor=0xFFD9AB23;border={radius=-1};color=0x005CFF;foreRight=15;forecolor=0xFF1C77FF;paddingBottom=5;paddingTop=5;z=7};
 statusIcon={cls="plus";text='\uF05A';left=40;top=90;right=70;bottom=120;color=0x3498DB;font=LOGFONT(h=-24;name='FontAwesome');z=5};
 titleBar={cls="bkplus";left=0;top=0;right=623;bottom=50;bgcolor=0x2C3E50;dl=1;dr=1;dt=1;z=2};
 titleIcon={cls="bkplus";text='\uF11C';left=15;top=12;right=45;bottom=42;color=0xECF0F1;font=LOGFONT(h=-20;name='FontAwesome');z=3};
@@ -64,7 +64,6 @@ yongIme.onReceiveFileEnd = function(size,filename){
     winform.lbInfo.text = string.format("下载进度：%d%% - %s",percent,filename);
 }
 
-// 统一设置按钮样式的函数
 var setButtonSkin = function(btn,defaultColor,hoverColor){
     btn.skin({
         background={
@@ -81,7 +80,6 @@ var setButtonSkin = function(btn,defaultColor,hoverColor){
     })
 }
 
-// 应用按钮样式
 setButtonSkin(winform.btnInstall,0xFF3498DB,0xFF2980B9);
 setButtonSkin(winform.btnUninstall,0xFFE74C3C,0xFFC0392B);
 setButtonSkin(winform.btnMb,0xFF9B59B6,0xFF8E44AD);
@@ -89,7 +87,21 @@ setButtonSkin(winform.btnSetting,0xFF95A5A6,0xFF7F8C8D);
 setButtonSkin(winform.btnHelp,0xFF16A085,0xFF138D75);
 setButtonSkin(winform.btnAi,0xFFF39C12,0xFFE67E22);
 
-// 按钮点击事件
+winform.progress.setTrackbarRange(1,100);
+winform.progress.skin({
+	background={
+		default=0xFF23ABD9
+	};
+	foreground={
+		default=0xFFFF771C;
+		hover=0xFFFF6600
+	};
+	color={
+		default=0xFFFF5C00;
+		hover=0xFFFF6600
+	}
+})
+
 winform.btnInstall.oncommand = function(id,event){
     winform.btnInstall.disabledText = ['\uF254','\uF251','\uF252','\uF253','\uF250'] 
     winform.lbInfo.text = "正在安装/更新输入法...";
@@ -171,7 +183,6 @@ winform.btnMb.oncommand = function(id,event){
     }
 }
 
-// 初始化界面状态
 if(yongIme.isInstalled()){
     winform.btnInstall.text = "更新 / 优化";
     winform.lbInfo.text = "输入法已安装，可以进行更新或配置";
